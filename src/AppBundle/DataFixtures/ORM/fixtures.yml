@@ -1,0 +1,41 @@
+AppBundle\Entity\Year:
+    year1:
+        year_name: 2014
+    year2:
+        year_name: 2015
+    year3:
+        year_name: 2016
+    year4:
+        year_name: 2017
+    year5:
+        year_name: 2018
+
+AppBundle\Entity\Category:
+    category1:
+        category_name: 'News'
+    category2:
+        category_name: 'Press release'
+
+AppBundle\Entity\Language:
+    language1:
+        language_name: 'en'
+    language2:
+        language_name: 'fr'
+
+AppBundle\Entity\Country:
+    country1:
+        country_name: 'France'
+    country2:
+        country_name: 'England'
+
+AppBundle\Entity\Post:
+    post_{1..16}:
+         year: '@year<numberBetween(1, 5)>'
+         category: '@category<numberBetween(1, 2)>'
+         country: '@country<numberBetween(1, 2)>'
+         language: '@language<numberBetween(1, 2)>'
+         title: <streetName()>
+         description: <sentence()>
+         image: 'https://www.telegraph.co.uk/content/dam/Travel/hotels/europe/france/paris/eiffel-tower-paris-p.jpg?imwidth=480'
+         created_at: '<dateTimeBetween("-200 days", "now")>'
+         updated_at: '<dateTimeBetween($created_at, "now")>'

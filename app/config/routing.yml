@@ -1,0 +1,14 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+posts:
+    type: annotation
+    resource: AppBundle\Controller\PostController
+
+posts_search:
+    path: /search/posts
+    methods: [POST]
+    defaults:
+        _controller: AppBundle\Controller\PostController:postSearchbyTitleAction
+        _format: annotation
