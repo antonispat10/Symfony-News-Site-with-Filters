@@ -6,6 +6,10 @@
 
     <div class="search-container col-lg-12">
 
+        <div class="form-control" style="margin-left:33px;width:70px;">
+            <a href="{{ path('posts_index') }}">Home</a>
+        </div>
+
         <div class="search-container col-lg-12">
             <form action="{{ path('search_post_action') }}" method="POST" >
                 <input type="text" placeholder="Search.." class="col-lg-11" style="margin-left:17px; height:30px;" name="searchable">
