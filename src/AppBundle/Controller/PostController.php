@@ -82,7 +82,7 @@ class PostController extends Controller
 
         $posts = $this->postRepository->findBy(['year'=>$year->getId()]);
 
-        $html = $this->render('posts/posts_by_year.html.twig', [
+        $html = $this->render('posts/index.html.twig', [
             'posts' => $posts
         ]);
 
@@ -95,9 +95,10 @@ class PostController extends Controller
     public function getPostsbyCountryAction(Country $country) {
         $posts = $this->postRepository->findBy(['country'=>$country->getId()]);
 
-        $html = $this->render('posts/posts_by_country.html.twig', [
+        $html = $this->render('posts/index.html.twig', [
             'posts' => $posts
-            ]);
+        ]);
+
 
         return new Response($html);
     }
@@ -109,9 +110,10 @@ class PostController extends Controller
 
         $posts = $this->postRepository->findBy(['category'=>$category->getId()]);
 
-        $html = $this->render('posts/posts_by_category.html.twig', [
+        $html = $this->render('posts/index.html.twig', [
             'posts' => $posts
         ]);
+
 
         return new Response($html);
     }
@@ -123,9 +125,10 @@ class PostController extends Controller
 
         $posts = $this->postRepository->findBy(['language'=>$language->getId()]);
 
-        $html = $this->render('posts/posts_by_language.html.twig', [
+        $html = $this->render('posts/index.html.twig', [
             'posts' => $posts
         ]);
+
 
         return new Response($html);
     }
@@ -159,9 +162,10 @@ class PostController extends Controller
 
         if (!empty($posts)){
 
-            $html = $this->render('posts/posts_search.html.twig', [
+            $html = $this->render('posts/index.html.twig', [
                 'posts' => $search_posts
             ]);
+
 
             return new Response($html);
 
