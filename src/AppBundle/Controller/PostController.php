@@ -160,7 +160,7 @@ class PostController extends Controller
 
         }
 
-        if (!empty($posts)){
+        if (!empty($search_posts)){
 
             $html = $this->render('posts/index.html.twig', [
                 'posts' => $search_posts
